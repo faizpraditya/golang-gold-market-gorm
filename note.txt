@@ -1,0 +1,47 @@
+Kamis
+go get gorm.io/gorm
+go get gorm.io/driver/postgres
+go get -u github.com/google/uuid
+
+GORM kek semacam framework
+
+ORM (Object Relations Mapping) yang dikembangkan untuk bahasa
+GO, Golang juga mendukung proses auto migrations, ini adalah alat
+bantu yang cukup keren yang berfungsi sebagai alat bantu untuk
+mempercepat kerja developer.
+Beberapa kelebihan ORM :
+● Associations (has one, has many, belongs to, many to many
+● Hooks (before/after create/save/update/delete/find)
+● Auto Migrations
+
+gorm
+convention over configuration
+dokumentasi gak detail
+
+gorm.Model
+ID string
+ID bakal ke override (yang dipake yang didefine manual
+gorm.Model -> mencakup field ID, CreatedAt, UpdatedAt, DeletedAt)
+
+by default db sudah auto begin sama commit
+auto begin sama auto commit gorm
+
+select(*)
+
+UserCredential (ada customer ID (foreign key))
+ID string `gorm:"column:id;size:36;primaryKey"`
+Username string `gorm:"size:50;not null"`
+Password string `gorm:"size:10;not null"`
+Email string `gorm:"size:50;not null"`
+CustomerID string
+IsActive bool
+gorm.Model 
+
+gorm.Model
+ID string `gorm:"column:id;size:36;primaryKey"`
+FirstName string `gorm:"column:first_name;size:50;not null"`
+LastName string `gorm:"column:last_name;size:50;not null"`
+BirthDate time.Time
+Address string
+Status int
+UserCredential UserCredential `gorm:"foreignKey:CustomerID"` 
