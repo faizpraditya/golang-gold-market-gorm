@@ -20,11 +20,13 @@ type Customer struct {
 	FirstName string `gorm:"column:first_name;size:50;not null"`
 	LastName  string `gorm:"column:last_name;size:50;not null"`
 	BirthDate time.Time
-	Address   string
+	// Address   string
+	Addresses []Address
 	Status    int
 	// Setelah membuat user credential (one to one)
 	// Bisa ga pakai struct tag, karena struct foregin key Customer, dan di UserCredential CustomerID
-	UserCredential UserCredential `gorm:"foreignKey:CustomerID"`
+	UserCredential UserCredential    `gorm:"foreignKey:CustomerID"`
+	Products       []CustomerProduct `gorm:"many2many:customer_has_products"`
 }
 
 func (c *Customer) ToString() string {

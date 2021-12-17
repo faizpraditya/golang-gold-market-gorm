@@ -2,6 +2,7 @@ Kamis
 go get gorm.io/gorm
 go get gorm.io/driver/postgres
 go get -u github.com/google/uuid
+go get github.com/joho/godotenv
 
 GORM kek semacam framework
 
@@ -45,3 +46,32 @@ BirthDate time.Time
 Address string
 Status int
 UserCredential UserCredential `gorm:"foreignKey:CustomerID"` 
+
+Single column update, multiple update updates
+
+Struct Person jadi people
+
+gorm udah otomatis menangani transactional, kalau mau gak pake bisa di disable
+
+insert -> 4 life cycle kepanggil
+update -> before save dan after save
+
+debug ada di newdbconn (koneksi)
+
+// select field tertentu
+model.select.scan
+
+update kalau primary key gak ketemu dia bakal insert
+
+scan bikin struct untuk menampung data yang ingin ditampilkan
+model.select.join.scan (jeremy, screenshot jumat 17 desember 2021)
+
+many to many customer has product created at dll belum masuk (masih nil) (codenya ada yang kurang pas)
+harus define created updated and deleted sendiri biar id gak termasuk
+
+total customer by product
+
+live code
+update nama sama address saja
+kalau makul sudah ada yang ambil, ga bisa dihapus
+restrict cascade
