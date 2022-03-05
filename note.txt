@@ -3,6 +3,8 @@ go get gorm.io/gorm
 go get gorm.io/driver/postgres
 go get -u github.com/google/uuid
 go get github.com/joho/godotenv
+// gingonic
+go get -u github.com/gin-gonic/gin
 
 GORM kek semacam framework
 
@@ -64,6 +66,7 @@ model.select.scan
 update kalau primary key gak ketemu dia bakal insert
 
 scan bikin struct untuk menampung data yang ingin ditampilkan
+preload ngeload semua (pakai select *)
 model.select.join.scan (jeremy, screenshot jumat 17 desember 2021)
 
 many to many customer has product created at dll belum masuk (masih nil) (codenya ada yang kurang pas)

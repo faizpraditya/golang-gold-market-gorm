@@ -1,7 +1,5 @@
 package main
 
-import "log"
-
 func main() {
 	// DB masuk ke native (ga pake gorm)
 	// db, err := conn.DB()
@@ -42,21 +40,21 @@ func main() {
 	// 	ProductName: "Tabungan",
 	// })
 
-	customerRepo := NewCustomerRepo(db)
-	err := customerRepo.OpenProductForExistingCustomer(Customer{
-		ID: "23ed591f-69fb-4f27-86f6-01f9f7fce784",
-		Products: []CustomerProduct{
-			{
-				ID: "CP002",
-			},
-			{
-				ID: "CP003",
-			},
-		},
-	})
-	if err != nil {
-		log.Println(err.Error())
-	}
+	// customerRepo := NewCustomerRepo(db)
+	// err := customerRepo.OpenProductForExistingCustomer(Customer{
+	// 	ID: "23ed591f-69fb-4f27-86f6-01f9f7fce784",
+	// 	Products: []CustomerProduct{
+	// 		{
+	// 			ID: "CP002",
+	// 		},
+	// 		{
+	// 			ID: "CP003",
+	// 		},
+	// 	},
+	// })
+	// if err != nil {
+	// 	log.Println(err.Error())
+	// }
 
 	// 3 table
 	// customerRepo := NewCustomerRepo(db)
